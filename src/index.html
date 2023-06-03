@@ -20,17 +20,52 @@
       </h1>
       <div class="calculator">
         <form class="calculator__form">
-          <div class="form-group">
+          <div class="form-group" id="bill-group">
             <div class="form-group__head">
               <label class="form-group__label" for="bill">Bill</label>
               <span class="form-group__error"></span>
             </div>
             <div class="form-group__input">
               <img src="assets/icon-dollar.svg" alt="" />
-              <input name="bill" type="text" placeholder="0" />
+              <input id="bill" type="text" placeholder="0" />
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="tip-group">
+            <div class="form-group__head">
+              <label class="form-group__label" for="tip">Select Tip %</label>
+              <span class="form-group__error"></span>
+            </div>
+            <div class="form-group__buttons">
+              <div class="form-group__btn">
+                <input type="radio" id="5-percent" name="tip" value="5" />
+                <label for="5-percent">5%</label>
+              </div>
+              <div class="form-group__btn">
+                <input type="radio" id="10-percent" name="tip" value="10" />
+                <label for="10-percent">10%</label>
+              </div>
+              <div class="form-group__btn">
+                <input type="radio" id="15-percent" name="tip" value="15" />
+                <label for="15-percent">15%</label>
+              </div>
+              <div class="form-group__btn">
+                <input type="radio" id="25-percent" name="tip" value="25" />
+                <label for="25-percent">25%</label>
+              </div>
+              <div class="form-group__btn">
+                <input type="radio" id="50-percent" name="tip" value="50" />
+                <label for="50-percent">50%</label>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  class="form-group__custom"
+                  placeholder="Custom"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group" id="people-group">
             <div class="form-group__head">
               <label class="form-group__label" for="people"
                 >Number of People</label
@@ -46,13 +81,15 @@
         <div class="output">
           <div class="output__item">
             <h2 class="output__title">Tip Amount</h2>
-            <p class="output__amount">$0.00</p>
+            <p class="output__amount" id="tip-amount">$0.00</p>
           </div>
           <div class="output__item">
             <h2 class="output__title">Total</h2>
-            <p class="output__amount">$0.00</p>
+            <p class="output__amount" id="total-amount">$0.00</p>
           </div>
-          <button class="output__reset output__reset--disabled">Reset</button>
+          <button class="output__reset output__reset--disabled" id="reset">
+            Reset
+          </button>
         </div>
       </div>
     </main>
