@@ -103,10 +103,23 @@ body {
     font-size: 1.5rem;
     font-family: inherit;
     text-transform: uppercase;
-    cursor: pointer;
     transition: all 0.2s;
 
+    &:hover {
+      cursor: pointer;
+      background-color: $color-strong-cyan;
+      color: $color-dark-cyan;
+      opacity: 0.75;
+    }
+
     &--disabled {
+      opacity: 0.25;
+      cursor: auto;
+    }
+
+    &--disabled:hover {
+      background-color: $color-strong-cyan;
+      color: $color-dark-cyan;
       opacity: 0.25;
       cursor: auto;
     }
@@ -194,6 +207,12 @@ body {
       border-radius: 0.5rem;
       transition: all 0.2s;
       cursor: pointer;
+    }
+
+    label:hover {
+      background-color: $color-strong-cyan;
+      color: $color-dark-cyan;
+      opacity: 0.75;
     }
   }
 
