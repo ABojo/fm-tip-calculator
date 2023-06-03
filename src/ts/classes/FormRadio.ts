@@ -1,5 +1,6 @@
 import ValidationResponse from "../interfaces/ValidationResponse";
 import FormItem from "./FormItem";
+import css from "../utils/css";
 
 class FormRadio extends FormItem {
   private radioButtons: HTMLInputElement[];
@@ -15,7 +16,7 @@ class FormRadio extends FormItem {
       this.rootElement.querySelectorAll('input[type="radio"]')
     ) as HTMLInputElement[];
 
-    this.inputElement = this.rootElement.querySelector('input[type="text"]');
+    this.inputElement = this.rootElement.querySelector(css.radioCustom);
 
     this.setupRadioButtons();
     this.setupCustomInput();

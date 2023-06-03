@@ -7,6 +7,7 @@ const css = {
   resetButton: "#reset",
   resetDisabled: "output__reset--disabled",
   groupError: "form-group--error",
+  radioCustom: ".form-group__custom",
 };
 
 export default css;
