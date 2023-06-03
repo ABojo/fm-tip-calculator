@@ -7,6 +7,9 @@ $color-dark-cyan: hsl(183, 100%, 15%);
 $color-strong-cyan: hsl(172, 67%, 45%);
 $color-red: #ff304f;
 
+$bp-lg: 56.25em;
+$bp-md: 33.125em;
+
 * {
   margin: 0;
   padding: 0;
@@ -38,10 +41,14 @@ body {
   font-size: 1.5rem;
   letter-spacing: 0.5rem;
   margin-bottom: 5rem;
+
+  @media (max-width: $bp-lg) {
+    margin-top: 5rem;
+  }
 }
 
 .calculator {
-  width: 90%;
+  width: 100%;
   max-width: 60rem;
   background-color: $color-white;
   border-radius: 1.8rem;
@@ -49,6 +56,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .output {
@@ -90,6 +101,10 @@ body {
   &__amount {
     color: $color-strong-cyan;
     font-size: 3rem;
+
+    @media (max-width: $bp-md) {
+      font-size: 1.9rem;
+    }
   }
 
   &__reset {
@@ -185,6 +200,10 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
+
+    @media (max-width: $bp-md) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__btn {
@@ -228,6 +247,10 @@ body {
     outline: none;
     border: 3px solid transparent;
     transition: all 0.2s;
+
+    @media (max-width: $bp-md) {
+      font-size: 1.4rem;
+    }
 
     &::placeholder {
       color: $color-gray-cyan-3;
