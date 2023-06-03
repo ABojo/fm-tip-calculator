@@ -15,14 +15,17 @@ const peopleGroup = new FormInput(css.peopleGroup);
 
 const form = new Form([billGroup, tipGroup, peopleGroup]);
 
-//whenever the form fields change run this callback
-form.subscribe((formData) => {
+//toggles the reset button based on form state
+form.subscribe(() => {
   if (form.isEmpty()) {
     display.disableResetButton();
   } else {
     display.enableResetButton();
   }
+});
 
+//updates the calculators memory and the display
+form.subscribe((formData) => {
   if (form.isValid()) {
     //update calculators memory with new data
     const billValue = formData[css.billGroup];

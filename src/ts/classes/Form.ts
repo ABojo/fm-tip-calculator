@@ -4,10 +4,12 @@ interface FormFields {
   [key: string]: string | number | null;
 }
 
+type ChangeListener = (formData: FormFields) => void;
+
 class Form {
   private fields: FormFields = {};
   private formItems: FormItem[];
-  private listener: null | ((formData: FormFields) => void) = null;
+  private listeners: ChangeListener[] = [];
 
   constructor(formItems: FormItem[]) {
     this.formItems = formItems;
@@ -19,15 +21,21 @@ class Form {
       formItem.subscribe((currentValue: number) => {
         this.fields[selector] = currentValue;
 
-        if (this.listener) {
-          this.listener(this.fields);
-        }
+        this.fireListeners();
+      });
+    });
+  }
+
+  private fireListeners() {
+    this.listeners.forEach((listener) => {
+      new Promise(() => {
+        listener(this.fields);
       });
     });
   }
 
   subscribe(cb: (formData: FormFields) => void) {
-    this.listener = cb;
+    this.listeners.push(cb);
   }
 
   isValid(): boolean {
