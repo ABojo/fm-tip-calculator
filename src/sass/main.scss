@@ -167,4 +167,67 @@ body {
       }
     }
   }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+
+  &__btn {
+    input {
+      display: none;
+    }
+
+    input:checked + label {
+      background-color: $color-strong-cyan;
+      color: $color-dark-cyan;
+    }
+
+    label {
+      display: block;
+      background-color: $color-dark-cyan;
+      color: $color-white;
+      text-align: center;
+      padding: 0.5rem 0;
+      font-size: 1.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+  }
+
+  &__custom {
+    height: 100%;
+    border: none;
+    font-family: inherit;
+    background-color: $color-gray-cyan-1;
+    padding-left: 1rem;
+    font-size: 1.7rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 3px solid transparent;
+    transition: all 0.2s;
+
+    &::placeholder {
+      color: $color-gray-cyan-3;
+    }
+
+    &:focus {
+      border: 3px solid $color-strong-cyan;
+    }
+  }
+
+  &--error &__input input {
+    border: 3px solid $color-red;
+  }
+
+  &--error &__label {
+    display: block;
+  }
+
+  &--error &__custom {
+    border: 3px solid $color-red;
+  }
 }
